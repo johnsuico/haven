@@ -30,7 +30,7 @@ app.get('/api/haven/:id', (req, res) => {
     if (err) {
       res.send("Could not find the specific haven: " + req.params.id);
     } else {
-      res.send(result);
+      res.send(result)
     }
   })
 });
