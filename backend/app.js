@@ -55,6 +55,16 @@ app.delete('/api/haven', (req, res) => {
   });
 });
 
+app.delete('/api/haven/:id', (req, res) => {
+  postModel.findByIdAndDelete(req.params.id, (err) => {
+    if (err) {
+      res.send("Could not delete haven: " + req.params.id);
+    } else {
+      res.send("Successfully deleted haven: " + req.params.id);
+    }
+  })
+});
+
 app.listen(process.env.PORT, (req, res) => {
   console.log("Backend server started on port: " + process.env.PORT);
 });
