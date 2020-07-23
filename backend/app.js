@@ -25,6 +25,16 @@ app.get('/api/haven', (req, res) => {
   })
 });
 
+app.get('/api/haven/:id', (req, res) => {
+  postModel.findById(req.params.id, (err, result) => {
+    if (err) {
+      res.send("Could not find the specific haven: " + req.params.id);
+    } else {
+      res.send(result);
+    }
+  })
+});
+
 app.post('/api/haven', (req, res) => {
   const title = req.body.title;
   const purpose = req.body.purpose;
