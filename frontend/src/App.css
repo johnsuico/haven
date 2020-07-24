@@ -14,8 +14,9 @@
 
 /* Navbar */
 .navbar {
-  background-color: rgba(0, 0, 0, 0.3);
   height: 4vh;
+  position: absolute;
+  width: 100%;
 }
 
 .navbar-items {
