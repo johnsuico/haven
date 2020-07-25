@@ -6,7 +6,7 @@ import './home.css';
 
 function Home() {
   return(
-    <div className="home-bg">
+    <div className="bg">
       <div className="home">
         <div className="hero-texts">
           <div className="hero-caption">

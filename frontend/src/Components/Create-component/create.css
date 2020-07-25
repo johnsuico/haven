@@ -1,0 +1,14 @@
+.create {
+  padding-top: 4vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+.create-container {
+  width: 60%;
+  height: 80%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.6);
+}
