@@ -8,7 +8,7 @@ import {
 import './App.css';
 
 // Components
-import Home from './Components/Home';
+import Home from './Components/Home-component/Home';
 
 function App() {
   return (
