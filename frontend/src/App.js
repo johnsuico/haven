@@ -10,6 +10,7 @@ import './App.css';
 // Components
 import Home from './Components/Home-component/Home';
 import Create from './Components/Create-component/Create';
+import PostList from './Components/PostList-component/PostList';
 
 function App() {
   return (
@@ -34,7 +35,7 @@ function App() {
             <Home />
           </Route>
           <Route path="/posts">
-            {/* Posts */}
+            <PostList />
           </Route>
           <Route path="/create">
             <Create />

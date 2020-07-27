@@ -21,6 +21,7 @@ function Create() {
   }
 
   function handleCreateSubmit(event) {
+    event.preventDefault();
     Axios.post('http://localhost:5000/api/haven', {
       title: title,
       purpose: purpose,
@@ -29,8 +30,7 @@ function Create() {
     .then((res) => {
       console.log("Successfully sent axios request");
     })
-
-    event.preventDefault();
+    
   }
 
   return(
