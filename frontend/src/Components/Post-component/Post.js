@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
 
 // CSS
 import './post.css';
@@ -6,9 +7,19 @@ import './post.css';
 function Post(props) {
   return (
     <div className="havenContainer">
-      <h3>{props.title}</h3>
-      <h4>{props.purpose}</h4>
-      <p className="havenBody">{props.body}</p>
+      <h3 className="haven-title haven-text">{props.title}</h3>
+      <h4 className="haven-purpose haven-text">{props.purpose}</h4>
+      <p className="haven-body haven-text">{props.body}</p>
+      <div className="icon-container haven-text">
+        <div className="upVote-container">
+          <FaArrowUp />
+          <p className="upvote">12</p>
+        </div>
+        <div className="downVote-container">
+          <FaArrowDown />
+          <p className="downvote">12</p>
+        </div>
+      </div>
     </div>
   )
 }
