@@ -4,6 +4,8 @@ import Axios from 'axios';
 // CSS
 import './postList.css';
 
+import Post from '../Post-component/Post';
+
 function PostList() {
 
   const [havenArray, setHavenArray] = useState([]);
@@ -22,11 +24,13 @@ function PostList() {
           <h2 className="postList-title">Anonymous Posts</h2>
           <div className="postList-posts">
             {havenArray.map(haven => 
-              <div className="havenContainer" key={haven._id}>
-                <h3>{haven.title}</h3>
-                <h4>{haven.purpose}</h4>
-                <p className="havenBody">{haven.body}</p>
-              </div>
+              <Post 
+                title={haven.title}
+                purpose={haven.purpose}
+                body={haven.body}
+                key={haven._id}
+
+              />
             )}
           </div>
         </div>
