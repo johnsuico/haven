@@ -29,8 +29,8 @@ function Create() {
     })
     .then((res) => {
       console.log("Successfully sent axios request");
+      window.location.replace('/posts');
     })
-    
   }
 
   return(
