@@ -13,11 +13,11 @@ function Post(props) {
       <div className="icon-container haven-text">
         <div className="upVote-container">
           <FaArrowUp />
-          <p className="upvote">12</p>
+          <p className="upvote">{props.upvote}</p>
         </div>
         <div className="downVote-container">
           <FaArrowDown />
-          <p className="downvote">12</p>
+          <p className="downvote">{props.downvote}</p>
         </div>
       </div>
     </div>

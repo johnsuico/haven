@@ -28,8 +28,9 @@ function PostList() {
                 title={haven.title}
                 purpose={haven.purpose}
                 body={haven.body}
+                upvote={haven.upvote}
+                downvote={haven.downvote}
                 key={haven._id}
-
               />
             )}
           </div>
