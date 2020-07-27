@@ -1,0 +1,10 @@
+.postList {
+  padding-top: 4vh;
+  border: 1px solid red;
+  height: 100vh;
+}
+
+.postList-title {
+  color: white;
+  text-align: center;
+}
