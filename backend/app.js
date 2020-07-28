@@ -82,6 +82,17 @@ app.put('/api/haven/reset-downvote/:id', (req, res) => {
   });
 });
 
+// Reset all votes
+app.put('/api/haven/reset-all/:id', (req, res) => {
+  postModel.updateOne({ _id: req.params.id }, { downvote: 0, upvote: 0 }, (err) => {
+    if(err) {
+      res.send(err);
+    } else {
+      res.send('Reset all');
+    }
+  });
+});
+
 app.post('/api/haven', (req, res) => {
   const title = req.body.title;
   const purpose = req.body.purpose;

@@ -30,12 +30,10 @@
 .upVote-container {
   display: flex;
   margin-right: 30px;
-  border: 1px solid red;
   cursor: pointer;
 }
 
 .downVote-container {
   display: flex;
-  border: 1px solid red;
   cursor: pointer;
 }
