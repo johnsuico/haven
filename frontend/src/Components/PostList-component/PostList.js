@@ -31,6 +31,7 @@ function PostList() {
                 upvote={haven.upvote}
                 downvote={haven.downvote}
                 key={haven._id}
+                id={haven._id}
               />
             )}
           </div>
