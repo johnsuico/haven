@@ -37,24 +37,49 @@ app.get('/api/haven/:id', (req, res) => {
   })
 });
 
+
+// Increment Upvotes by 1
 app.put('/api/haven/upvote/:id', (req, res) => {
-  postModel.findOneAndUpdate({_id: req.params.id}, {$inc: {upvote: 1}}, (err) => {
+  postModel.updateOne({ _id: req.params.id }, { $inc: {upvote: 1} }, (err) => {
     if(err) {
       res.send(err);
     } else {
       res.send('Updated upvote');
     }
-  })
+  });
 });
 
-app.put('/api/haven/downvote/:id', (req, res) => {
-  postModel.findOneAndUpdate({_id: req.params.id}, {$inc: {downvote: 1}}, (err) => {
+// Reset Upvotes
+app.put('/api/haven/reset-upvote/:id', (req, res) => {
+  postModel.updateOne({ _id: req.params.id }, { upvote: 0 }, (err) => {
     if(err) {
       res.send(err);
     } else {
-      res.send('Updated upvote');
+      res.send('Reset upvote');
     }
-  })
+  });
+});
+
+// Decrement Downvotes by 1
+app.put('/api/haven/downvote/:id', (req, res) => {
+  postModel.updateOne({ _id: req.params.id }, { $inc: {downvote: -1} }, (err) => {
+    if(err) {
+      res.send(err);
+    } else {
+      res.send('Updated downvote');
+    }
+  });
+});
+
+// Reset Downvotes
+app.put('/api/haven/reset-downvote/:id', (req, res) => {
+  postModel.updateOne({ _id: req.params.id }, { downvote: 0 }, (err) => {
+    if(err) {
+      res.send(err);
+    } else {
+      res.send('Reset downvote');
+    }
+  });
 });
 
 app.post('/api/haven', (req, res) => {
