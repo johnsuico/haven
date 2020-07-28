@@ -37,6 +37,26 @@ app.get('/api/haven/:id', (req, res) => {
   })
 });
 
+app.put('/api/haven/upvote/:id', (req, res) => {
+  postModel.findOneAndUpdate({_id: req.params.id}, {$inc: {upvote: 1}}, (err) => {
+    if(err) {
+      res.send(err);
+    } else {
+      res.send('Updated upvote');
+    }
+  })
+});
+
+app.put('/api/haven/downvote/:id', (req, res) => {
+  postModel.findOneAndUpdate({_id: req.params.id}, {$inc: {downvote: 1}}, (err) => {
+    if(err) {
+      res.send(err);
+    } else {
+      res.send('Updated upvote');
+    }
+  })
+});
+
 app.post('/api/haven', (req, res) => {
   const title = req.body.title;
   const purpose = req.body.purpose;
