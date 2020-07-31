@@ -15,3 +15,9 @@
   width: 95%;
   margin: 2vh auto;
 }
+
+.postList-caption {
+  color: white;
+  text-align: center;
+  margin: 10px;
+}

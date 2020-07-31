@@ -22,6 +22,7 @@ function PostList() {
       <div className="postList">
         <div className="postList-container">
           <h2 className="postList-title">Anonymous Posts</h2>
+          <p className="postList-caption">Click on a card to read more</p>
           <div className="postList-posts">
             {havenArray.map(haven => 
               <Post 
