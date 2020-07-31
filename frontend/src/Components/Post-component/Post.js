@@ -18,7 +18,16 @@ function Post(props) {
     <div className="havenContainer">
       <h3 className="haven-title haven-text">{props.title}</h3>
       <h4 className="haven-purpose haven-text">{props.purpose}</h4>
-      <p className="haven-body haven-text">{props.body}</p>
+
+      { props.body.length >= 200
+        ?
+          <p className="haven-body haven-text">{props.body.slice(1, 200)}...</p>
+        :
+          <p className="haven-body haven-text">{props.body}</p>
+      }
+
+
+
       <div className="icon-container haven-text">
         <div className="upVote-container" onClick={upvoteClick}>
           <FaArrowUp />
