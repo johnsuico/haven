@@ -1,8 +1,16 @@
-.specificPost-container {
+.specificPost{
   padding-top: 4vh;
+  height: 100vh;
 }
 
-.specificPost-container h2 {
-  color: white;
-  text-align: center;
+.specificPost-container {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 30px;
+  width: 60%;
+  min-height: 90%;
+  margin: auto;
+}
+
+.specificPost-info {
+  filter: none;
 }
