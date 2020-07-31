@@ -11,6 +11,7 @@ import './App.css';
 import Home from './Components/Home-component/Home';
 import Create from './Components/Create-component/Create';
 import PostList from './Components/PostList-component/PostList';
+import SpecificPost from './Components/SpecificPost-component/SpecificPost';
 
 function App() {
   return (
@@ -39,6 +40,9 @@ function App() {
           </Route>
           <Route path="/create">
             <Create />
+          </Route>
+          <Route path="/haven/:id">
+            <SpecificPost />
           </Route>
         </Switch>
 

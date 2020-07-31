@@ -1,13 +1,15 @@
-.havenContainer {
+.haven-link {
   background-color: rgba(255, 255, 255, 0.4);
   width: 30%;
   height: 200px;
   border-radius: 30px;
   margin: 20px;
   transition: ease-in-out 0.3s;
+  text-decoration: none;
+  color: black;
 }
 
-.havenContainer:hover {
+.haven-link:hover {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
@@ -25,7 +27,7 @@
 }
 
 .haven-body {
-  height: 40%;
+  height: 90px;
 }
 
 .icon-container {

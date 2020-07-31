@@ -27,6 +27,7 @@ app.get('/api/haven', (req, res) => {
   })
 });
 
+// Get a specific haven post
 app.get('/api/haven/:id', (req, res) => {
   postModel.findById(req.params.id, (err, result) => {
     if (err) {
