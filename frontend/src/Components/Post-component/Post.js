@@ -26,8 +26,6 @@ function Post(props) {
           <p className="haven-body haven-text">{props.body}</p>
       }
 
-      <div className="bottom-bar-container">
-
         <div className="icon-container haven-text">
           <div className="upVote-container" onClick={upvoteClick}>
             <FaArrowUp />
@@ -38,11 +36,6 @@ function Post(props) {
             <p className="downvote">{props.downvote}</p>
           </div>
         </div>
-
-        <div className="readMore">
-          <h4>Read more...</h4>
-        </div>
-      </div>
     </div>
   )
 }
