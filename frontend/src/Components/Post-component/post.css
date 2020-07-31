@@ -37,3 +37,21 @@
   display: flex;
   cursor: pointer;
 }
+
+.bottom-bar-container {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: auto;
+  align-items: center;
+}
+
+.readMore {
+  width: 40%;
+}
+
+.readMore h4 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-align: center;
+}
