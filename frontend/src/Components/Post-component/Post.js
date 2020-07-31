@@ -21,7 +21,7 @@ function Post(props) {
 
       { props.body.length >= 200
         ?
-          <p className="haven-body haven-text">{props.body.slice(1, 200)}...</p>
+          <p className="haven-body haven-text">{props.body.slice(0, 200)}...</p>
         :
           <p className="haven-body haven-text">{props.body}</p>
       }
