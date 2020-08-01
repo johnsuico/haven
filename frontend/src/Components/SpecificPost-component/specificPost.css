@@ -20,11 +20,23 @@
   padding-top: 30px;
 }
 
+.specificPost-second-level-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.specificPost-icon-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .specificPost-purpose {
   font-weight: 400;
   font-size: 1.3rem;
-  width: 90%;
-  margin: 4vh auto;
+  margin: 4vh 0;
 }
 
 .specificPost-context-container {
@@ -38,5 +50,5 @@
 }
 
 .specificPost-context-container p {
-  margin: 20px 0;
+  margin: 20px;
 }
