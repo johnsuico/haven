@@ -9,8 +9,34 @@
   width: 60%;
   min-height: 90%;
   margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
-.specificPost-info {
-  filter: none;
+.specificPost-title {
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.specificPost-purpose {
+  font-weight: 400;
+  font-size: 1.3rem;
+  width: 90%;
+  margin: 4vh auto;
+}
+
+.specificPost-context-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.specificPost-context-container h2 {
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+
+.specificPost-context-container p {
+  margin: 20px 0;
 }
