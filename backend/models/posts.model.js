@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
+const commentSchema = require('./comment.model').schema;
 
 const postSchema = new mongoose.Schema ({
   title: String,
   purpose: String,
   body: String,
+  comments: [commentSchema],
   upvote: {
     type: Number,
     default: 0
