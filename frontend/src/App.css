@@ -7,6 +7,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+html, body {
+  background-color: rgba(129, 132, 140, 1);
+}
+
 .container {
   width: 95%;
   margin: auto;

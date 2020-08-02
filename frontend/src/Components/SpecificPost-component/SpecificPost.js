@@ -57,6 +57,14 @@ function SpecificPost() {
             <p>{haven.body}</p>
           </div>
         </div>
+
+        <div className="add-comment-container">
+            <h3 className="add-comment-title add-comment-item">Add comment</h3>
+            <form className="add-comment-form add-comment-item">
+              <label>Write comment: </label>
+              <textarea cols="30" rows="10">Write comment here</textarea>
+            </form>
+          </div>  
       </div>
     </div>
   )
