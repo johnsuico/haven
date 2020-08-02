@@ -7,6 +7,7 @@ require('dotenv').config();
 
 // Models
 const postModel = require('./models/posts.model');
+const commentModel = require('./models/comment.model');
 
 app.use(express.json());
 app.use(cors());
@@ -36,6 +37,17 @@ app.get('/api/haven/:id', (req, res) => {
       res.send(result)
     }
   })
+});
+
+// Add comment
+app.post('/api/haven/:id/comment', (req, res) => {
+  postModel.updateOne({ _id: req.params.id }, {comments: {comment: 'test'}}, (err) => {
+    if(err) {
+      res.send(err);
+    } else {
+      res.send('Updated comment');
+    }
+  });
 });
 
 
