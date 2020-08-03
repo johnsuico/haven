@@ -26,7 +26,6 @@ function SpecificPost() {
   }
 
   return(
-    <div className="bg">
       <div className="specificPost">
         <div className="specificPost-container">
           <h2 className="specificPost-title">{haven.title}</h2>
@@ -56,17 +55,18 @@ function SpecificPost() {
             <h2>Body:</h2>
             <p>{haven.body}</p>
           </div>
-        </div>
 
-        <div className="add-comment-container">
+          {/* Comment section */}
+          <div className="add-comment-container">
             <h3 className="add-comment-title add-comment-item">Add comment</h3>
             <form className="add-comment-form add-comment-item">
               <label>Write comment: </label>
-              <textarea cols="30" rows="10">Write comment here</textarea>
+              <textarea cols="30" rows="3"></textarea>
             </form>
-          </div>  
+          </div> 
+
+        </div> 
       </div>
-    </div>
   )
 }
 

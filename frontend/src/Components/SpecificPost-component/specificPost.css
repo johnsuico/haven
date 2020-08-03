@@ -7,7 +7,6 @@
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 30px;
   width: 60%;
-  min-height: 90%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -54,18 +53,15 @@
 }
 
 .add-comment-container {
-  border: 1px solid red;
-  width: 60%;
-  margin: 10% auto;
-  border-radius: 30px;
-  background-color: rgba(255, 255, 255, 0.8);
-  
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 10%;
 }
 
 .add-comment-title {
   font-weight: 400;
   font-size: 1.2rem;
-  padding: 10px 0 20px 0;
+  padding: 10px 0;
 }
 
 .add-comment-item {

@@ -18,7 +18,6 @@ function PostList() {
   })
 
   return (
-    <div className="bg">
       <div className="postList">
         <div className="postList-container">
           <h2 className="postList-title">Anonymous Posts</h2>
@@ -38,7 +37,6 @@ function PostList() {
           </div>
         </div>
       </div>
-    </div>
   )
 }
 
