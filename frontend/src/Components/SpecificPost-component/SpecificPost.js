@@ -10,19 +10,37 @@ function SpecificPost() {
 
   const { id } = useParams(); 
   const [haven, setHaven] = useState({});
+  const [newComment, setNewComment] = useState('');
+
+  function onCommentChange(e) {
+    setNewComment(e.target.value);
+  }
 
   useEffect( ()=> {
     Axios.get(`http://localhost:5000/api/haven/${id}`)
       .then(response => {
         setHaven(response.data);
       })
-  })
+    
+    return function CleanUp() {
+      AbortController.abort();
+    }
+  }, [id])
 
   function upvoteClick() {
     Axios.put(`http://localhost:5000/api/haven/upvote/${haven._id}`);
   }
   function downvoteClick() {
     Axios.put(`http://localhost:5000/api/haven/downvote/${haven._id}`);
+  }
+  function postComment(e) {
+    e.preventDefault();
+    Axios.post(`http://localhost:5000/api/haven/${haven._id}/comment`, {
+      comment: newComment
+    })
+    .then((res) => {
+      console.log("Successfully sent new comment");
+    })
   }
 
   return(
@@ -59,9 +77,10 @@ function SpecificPost() {
           {/* Comment section */}
           <div className="add-comment-container">
             <h3 className="add-comment-title add-comment-item">Add comment</h3>
-            <form className="add-comment-form add-comment-item">
+            <form className="add-comment-form add-comment-item" onSubmit={postComment}>
               <label>Write comment: </label>
-              <textarea cols="30" rows="3"></textarea>
+              <textarea cols="30" rows="3" onChange={onCommentChange} value={newComment}></textarea>
+              <input type="submit" value="Post Comment"/>
             </form>
           </div> 
 

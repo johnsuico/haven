@@ -41,13 +41,22 @@ app.get('/api/haven/:id', (req, res) => {
 
 // Add comment
 app.post('/api/haven/:id/comment', (req, res) => {
-  postModel.updateOne({ _id: req.params.id }, {comments: {comment: 'test'}}, (err) => {
-    if(err) {
+  // postModel.updateOne({ _id: req.params.id }, {comments: {comment: req.body.comment}}, (err) => {
+  //   if(err) {
+  //     res.send(err);
+  //   } else {
+  //     res.send('Updated comment');
+  //   }
+  // });
+
+  postModel.updateOne({_id: req.params.id }, { $push: {comments: {comment: req.body.comment}}}, (err) => {
+    if (err) {
       res.send(err);
     } else {
-      res.send('Updated comment');
+      res.send('Push new comment to array');
     }
   });
+
 });
 
 
