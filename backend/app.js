@@ -41,14 +41,6 @@ app.get('/api/haven/:id', (req, res) => {
 
 // Add comment
 app.post('/api/haven/:id/comment', (req, res) => {
-  // postModel.updateOne({ _id: req.params.id }, {comments: {comment: req.body.comment}}, (err) => {
-  //   if(err) {
-  //     res.send(err);
-  //   } else {
-  //     res.send('Updated comment');
-  //   }
-  // });
-
   postModel.updateOne({_id: req.params.id }, { $push: {comments: {comment: req.body.comment}}}, (err) => {
     if (err) {
       res.send(err);
@@ -56,7 +48,17 @@ app.post('/api/haven/:id/comment', (req, res) => {
       res.send('Push new comment to array');
     }
   });
+});
 
+// Get a specific haven post comments
+app.get('/api/haven/:id/comment', (req, res) => {
+  postModel.findById(req.params.id, (err, result) => {
+    if (err) {
+      res.send("Could not find the specific haven: " + req.params.id);
+    } else {
+      res.send(result.comments)
+    }
+  })
 });
 
 
