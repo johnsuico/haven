@@ -100,3 +100,7 @@
 .add-comment-form input[type=submit]:hover {
   background-color: rgba(255, 255, 255, 1);
 }
+
+.comment-list {
+  margin-bottom: 10px;
+}

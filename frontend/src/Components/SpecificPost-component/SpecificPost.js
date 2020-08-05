@@ -6,11 +6,15 @@ import { useParams } from 'react-router-dom'
 // CSS
 import './specificPost.css';
 
+import Comment from '../Comment-component/Comment';
+
 function SpecificPost() {
 
   const { id } = useParams(); 
   const [haven, setHaven] = useState({});
+  const [havenComments, setHavenComments] = useState([]);
   const [newComment, setNewComment] = useState('');
+
 
   function onCommentChange(e) {
     setNewComment(e.target.value);
@@ -21,11 +25,11 @@ function SpecificPost() {
       .then(response => {
         setHaven(response.data);
       })
-    
-    return function CleanUp() {
-      AbortController.abort();
-    }
-  }, [id])
+    Axios.get(`http://localhost:5000/api/haven/${id}/comment`)
+      .then (response => {
+        setHavenComments(response.data);
+      })
+  }, [id, havenComments])
 
   function upvoteClick() {
     Axios.put(`http://localhost:5000/api/haven/upvote/${haven._id}`);
@@ -34,7 +38,6 @@ function SpecificPost() {
     Axios.put(`http://localhost:5000/api/haven/downvote/${haven._id}`);
   }
   function postComment(e) {
-    e.preventDefault();
     Axios.post(`http://localhost:5000/api/haven/${haven._id}/comment`, {
       comment: newComment
     })
@@ -83,6 +86,13 @@ function SpecificPost() {
               <input type="submit" value="Post Comment"/>
             </form>
           </div> 
+
+          {/* Read Comments */}
+          <div className="comment-list">
+            {havenComments.map(comment => {
+              return <Comment key={comment._id} comment={comment.comment} />
+            })}
+          </div>
 
         </div> 
       </div>

@@ -15,7 +15,7 @@ function PostList() {
       .then( response => {
         setHavenArray(response.data);
       })
-  })
+  }, [])
 
   return (
       <div className="postList">
