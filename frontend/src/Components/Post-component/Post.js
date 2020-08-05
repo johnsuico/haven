@@ -1,19 +1,11 @@
 import React from 'react';
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
-import Axios from 'axios';
 import { Link } from 'react-router-dom';
 
 // CSS
 import './post.css';
 
 function Post(props) {
-
-  function upvoteClick() {
-    Axios.put(`http://localhost:5000/api/haven/upvote/${props.id}`);
-  }
-  function downvoteClick() {
-    Axios.put(`http://localhost:5000/api/haven/downvote/${props.id}`);
-  }
 
   const link = `/haven/${props.id}`;
 
@@ -31,11 +23,11 @@ function Post(props) {
         }
 
         <div className="icon-container haven-text">
-          <div className="upVote-container" onClick={upvoteClick}>
+          <div className="upVote-container">
             <FaArrowUp />
             <p className="upvote">{props.upvote}</p>
           </div>
-          <div className="downVote-container" onClick={downvoteClick}>
+          <div className="downVote-container">
             <FaArrowDown />
             <p className="downvote">{props.downvote}</p>
           </div>
