@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
+import Axios from 'axios';
 import { Link } from 'react-router-dom';
 
 // CSS
@@ -8,6 +9,15 @@ import './post.css';
 function Post(props) {
 
   const link = `/haven/${props.id}`;
+
+  const [havenComments, setHavenComments] = useState([]);
+
+  useEffect(() => {
+    Axios.get(`http://localhost:5000/api/haven/${props.id}/comment`)
+      .then (response => {
+        setHavenComments(response.data);
+      })
+  }, [props.id])
 
   return (
     <Link to={link} className="haven-link">
@@ -30,6 +40,9 @@ function Post(props) {
           <div className="downVote-container">
             <FaArrowDown />
             <p className="downvote">{props.downvote}</p>
+          </div>
+          <div className="comment-counter">
+            <p className="commentCounter">Comments: {havenComments.length}</p>
           </div>
         </div>
       </div>
