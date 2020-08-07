@@ -28,3 +28,10 @@ A simple full stack web app that takes anonymous posts and displays them
   ```
   npm start
   ```
+
+**Technology Used**
+The MERN stack was used to create this project
+- Mongo
+- Express
+- React
+- Node
