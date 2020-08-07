@@ -32,15 +32,24 @@
 
 .icon-container {
   display: flex;
+  align-items: center;
 }
 
 .upVote-container {
   display: flex;
   margin-right: 30px;
-  cursor: pointer;
 }
 
 .downVote-container {
   display: flex;
-  cursor: pointer;
+  margin-right: 30px;
+}
+
+.commentCounter-container {
+  display: flex;
+  align-items: center;
+}
+
+.commentCounter {
+  padding: 3px;
 }

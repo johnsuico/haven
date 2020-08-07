@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
+import { FaArrowUp, FaArrowDown, FaCommentAlt } from 'react-icons/fa';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -41,8 +41,9 @@ function Post(props) {
             <FaArrowDown />
             <p className="downvote">{props.downvote}</p>
           </div>
-          <div className="comment-counter">
-            <p className="commentCounter">Comments: {havenComments.length}</p>
+          <div className="commentCounter-container">
+            <FaCommentAlt />
+            <p className="commentCounter">{havenComments.length}</p>
           </div>
         </div>
       </div>
