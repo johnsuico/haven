@@ -15,18 +15,8 @@ A simple full stack web app that takes anonymous posts and displays them
   ```
   cd haven
   ```
-  - cd into the frontend folder and install packages
-    ```
-    cd frontend/
-    npm install
-    cd ..
-    ```
-  - cd into the backend folder
-    ```
-    cd backend/
-    npm install
-    ```
-- Run the start script in the backend folder
+- Run the following command:
+
   ```
   npm start
   ```
