@@ -4,7 +4,9 @@ A simple full stack web app that takes anonymous posts and displays them
 
 **Demo**
 ![Haven Demo](demo/haven_demo.gif)
-- Demo website is not published yet, stay tuned.
+- Demo website
+  - http://react-haven.herokuapp.com
+  - It will be an unsecure connection since safari will not display any information from my API since it is not going through an HTTPS request
 
 **Run Locally**
 - Clone github repo
